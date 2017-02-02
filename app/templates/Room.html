@@ -1,10 +1,19 @@
-<ul>
-    <li ng-repeat="room in rooms">
-        {{ room.name }}
-        </li>
-</ul>
 
-<form ng-submit="addRoom()">
-    <input ng-model="newRoomName" />
-    <button type="submit">Create Room</button>
-</form>
+<section ng-controller="HomeCtrl as homeCtrl">
+	<section class="room-nav">
+		<div class="sidebar-title">
+			<h1>Bloc Chat</h1>
+		</div>
+
+		<div class="button">Create Room</div>
+
+		<table class="room-list">
+			<tr class="room-item" ng-repeat="room in homeCtrl.rooms.all">
+				<td>{{ room }}</td>
+			</tr>
+		</table>
+
+		<div class="arrow-icon"></div>
+
+	</section>
+</section>
