@@ -1,1 +1,16 @@
-<ng-include src="/templates/Room.html"></ng-include>
+<section ng-controller="HomeCtrl as homeCtrl">
+	<section class="room-nav">
+		<div class="sidebar-title">
+			<h1>Bloc Chat</h1>
+		</div>
+
+		<div class="button">Create Room</div>
+
+        <h4 ng-repeat="room in homeCtrl.rooms track by $index">
+            {{ room.$value }}
+        </h4>
+
+		<div class="arrow-icon"></div>
+
+	</section>
+</section>
