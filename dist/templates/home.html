@@ -5,9 +5,31 @@
 		</div>
 
 		<div class="button">Create Room</div>
+		<button type="button" class="btn btn-default" ng-click="openModal()">Create New Room</button>
+
+		<script type="text/ng-template" id="roomsModal.html">
+				<div class="modal-header">
+					<h3 class="modal-title">Create a new room!<h3>
+				</div>
+
+
+				<div class="modal-body">
+						<!--push a new room onto the array -->
+						<form ng-submit="addRoom()">
+								Name: <input ng-model="newRoomName" />
+						</form>
+				</div>
+
+
+
+				<div class ="modal-footer">
+					<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+				  <button class="btn btn-primary" type="button" ng-click="create()">Create</button>
+				</div>
+		</script>
 
         <h4 ng-repeat="room in homeCtrl.rooms track by $index">
-            {{ room.name }}
+            {{ room.$value }}
         </h4>
 
 		<div class="arrow-icon"></div>
