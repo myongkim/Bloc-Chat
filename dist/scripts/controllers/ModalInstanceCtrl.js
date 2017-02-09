@@ -3,7 +3,7 @@
         $scope.rooms = Room;
 
         $scope.create = function() {
-            $scope.rooms.rooms.$add({
+            $scope.rooms.$add({
               name: $scope.newRoomName
             });
 
