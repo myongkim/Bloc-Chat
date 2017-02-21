@@ -1,17 +1,28 @@
-<section ng-controller="HomeCtrl as homeCtrl">
-	<section class="room-nav">
-				<div class="sidebar-title">
-					<h1 id="home-title">Bloc Chat</h1>
-				</div>
 
-	<div class="button"></div>
-				<button type="button" class="btn btn-primary" ng-click="home.openModal()">Create New Room</button>
+<div class="room-list-container">
+    <div class="room-list-title">
+        <span ui-sref="home">Bloc Chat</span><br>
+        <button type="button" class="btn btn-primary" ng-click="open()">Create New Room</button>
+    </div>
 
+    <script type="text/ng-template" id="roomsModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Create a new room!</h3>
+        </div>
+        <div class="modal-body">
+            <!-- push a new room onto the array -->
+            Name: <input ng-model="newRoomName" />
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary" type="button" ng-click="create()">Create</button>
+        </div>
+    </script>
+		<br/>
 
-
-        <h4 ng-repeat="room in homeCtrl.rooms track by $index">
-            {{ room.$value }}
-        </h4>
-
-	</section>
-</section>
+	 <div class="room-list-rooms">
+			 <div class="room-list-rooms-individual" ng-repeat="room in homeCtrl.rooms track by $index">
+					 {{ room.$value }}
+			 </div>
+	 </div>
+</div>
