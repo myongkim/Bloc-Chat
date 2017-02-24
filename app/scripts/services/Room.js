@@ -7,13 +7,11 @@
     addRoom = function(newRoomName){
       rooms.$add({
           name: newRoomName
-
       });
     };
 
     return {
       all: rooms
-
     };
   }
 

@@ -27,3 +27,12 @@ body.home {
 .hero-content .hero-title:hover {
     cursor: pointer;
 }
+
+.button-box {
+	box-sizing: border-box;
+	position: relative;
+	height: 4em;
+	width: 100%;
+	margin: 0;
+	padding-top: 1em;
+}

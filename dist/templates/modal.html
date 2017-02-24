@@ -1,0 +1,17 @@
+
+<section class="form-popup">
+	<div class="modal-header" ng-controller="ModalCtrl as modalCtrl">
+		<h5 class="modal-title" id="modal-title">Create New Room</h3>
+	</div>
+	<div class="modal-body" id="modal-body">
+		<form>
+			Enter a room name<br>
+			<input type="text" ng-model="roomName"><br>
+		 </form>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-click="modalCtrl.createRoom()">Create</button>
+		<button class="btn btn-warning" type="button" ng-click="modalCtrl.dismiss()">Dismiss</button>
+	</div>
+</section>
