@@ -13,7 +13,7 @@
           return $scope.modalInstance
         };
 
-        this.create = function() {
+        this.createRoom = function() {
             // $scope.rooms.rooms.$add({
             //   name: $scope.newRoomName
             // });
@@ -22,7 +22,7 @@
         };
 
         this.dismiss = function() {
-            $scope.modalInstance.close();
+            $uibModal.close();
         };
     }
 
