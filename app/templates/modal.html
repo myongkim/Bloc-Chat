@@ -1,17 +1,18 @@
+<section class="form-popup" ng-controller="ModalCtrl as modal">
+    <div class="modal-header">
+        <h2 class="modal-title">Create New Room</h2>
+    </div>
+    <div class="modal-body">
+        Enter a room name:
+        <form ng-submit="modal.createRoom()">
+            <div class="input-group animated fadeIn">
+                <input type="text" class="form-control finderBar" ng-model="modal.name" title="name" placeholder="Your room name here" autofocus>
+            </div>
+        </form>
 
-<section class="form-popup">
-	<div class="modal-header" ng-controller="ModalCtrl as modalCtrl">
-		<h5 class="modal-title" id="modal-title">Create New Room</h3>
-	</div>
-	<div class="modal-body" id="modal-body">
-		<form>
-			Enter a room name<br>
-			<input type="text" ng-model="roomName"><br>
-		 </form>
-
-	</div>
-	<div class="modal-footer">
-		<button class="btn btn-primary" type="button" ng-click="modalCtrl.createRoom()">Create</button>
-		<button class="btn btn-warning" type="button" ng-click="modalCtrl.dismiss()">Dismiss</button>
-	</div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="modal.createRoom()">Create Room</button>
+        <button class="btn btn-warning" type="button" ng-click="modal.dismiss()">Dismiss</button>
+    </div>
 </section>
