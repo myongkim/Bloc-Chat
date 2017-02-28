@@ -1,12 +1,14 @@
 
-<section class="form-popup">
-	<div class="modal-header" ng-controller="ModalCtrl as modalCtrl">
+<section class="form-popup" ng-controller="ModalCtrl as modal">
+	<div class="modal-header">
 		<h5 class="modal-title" id="modal-title">Create New Room</h3>
 	</div>
-	<div class="modal-body" id="modal-body">
-		<form>
-			Enter a room name<br>
-			<input type="text" ng-model="roomName"><br>
+	<div class="modal-body">
+
+			<form ng-submit="modal.createRoom()">
+					<div class="input-group animated fadeIn">
+							<input type="text" class="form-control finderBar" ng-model="modal.name" title="name" placeholder="Your room name here" autofocus>
+					</div>
 		 </form>
 
 	</div>
