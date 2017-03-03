@@ -8,6 +8,7 @@
               templateUrl: '/templates/modal.html',
               controller: 'ModalCtrl',
               controllerAs: 'modalCtrl',
+          
           });
 
           return $scope.modalInstance

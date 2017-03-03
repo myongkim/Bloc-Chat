@@ -11,6 +11,7 @@
         rooms.$add(newRoomName);
       }
     };
+
   }
 
   angular

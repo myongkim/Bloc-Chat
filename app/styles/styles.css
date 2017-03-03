@@ -1,0 +1,87 @@
+body {
+    padding: 0px 25px 0px 25px;
+    background-color: #fcfbe3;
+    height: 800px;
+}
+
+.navbar {
+    background-color: aliceblue;
+    padding: 10px;
+}
+
+.headline {
+    text-align: center;
+}
+
+.room-list {
+    border: solid 3px darkblue;
+    border-radius: 10px;
+    padding: 10px;
+    width: 25%;
+    height: 600px;
+    float: left;
+}
+
+.room-list button {
+    margin: 5px;
+}
+
+.room-list p {
+    font-size: 20px;
+}
+
+.chat-section {
+    height: 600px;
+    width: 73%;
+    margin-left: 15px;
+    border: 3px solid darkblue;
+    float: left;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.chat-section table {
+    border-spacing: 5px;
+/*    width: 600px;*/
+    width: 75%;
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: bisque;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+
+.chat-section th, td{
+    padding: 10px;
+
+}
+
+.modal {
+    padding: 15px;
+    text-align: center;
+}
+
+.modal input {
+    margin-bottom: 5px;
+}
+
+.empty {
+    height: 25px;
+}
+
+.container:before,
+.container:after {
+    content: "";
+    display: table;
+}
+
+.container:after {
+    clear: both;
+}
