@@ -11,29 +11,27 @@
       <section class="room-list-container">
          <table class="room-list">
            <div class="room-list-rooms-individual" ng-repeat="room in homeCtrl.rooms track by $index">
-    					 <p><a ng-click="rooms.selectRoom(room)">{{ room.$value }}</a></p>
+    					 <p><a ng-click="homeCtrl.selectRoom(room)">{{ room.$value }}</a></p>
     			 </div>
          </table>
        </section>
 	 </div>
 
 </section>
-
 <section class="chat-selection">
-    <h1>{{rooms.currentRoom.name}}</h1>
-
-    <div class ="container" ng-repeat="messages in homeCtrl.rooms track by $index">
+    <div class ="container">
+       <h2>{{ currentRoom.$value }}</h2>
         <table>
-              <tr>
+              <tr ng-repeat="message in homeCtrl.messages track by $index">
                 <th>User</th>
                 <th>Time Sent</th>
                 <th>Message</th>
               </tr>
 
               <tr>
-                <td>{{message.username}}</td>
-                <td>{{message.sentAt}}</td>
-                <td>{{message.content}}</td>
+                <td>{{ message.username }}</td>
+                <td>{{ message.sentAt }}</td>
+                <td>{{ message.content }}</td>
               </tr>
         </table>
     </div>

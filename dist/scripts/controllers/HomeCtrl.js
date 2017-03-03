@@ -1,24 +1,27 @@
 (function() {
-    function HomeCtrl(Room, Message) {
+    function HomeCtrl(Room, Message, $scope) {
+        rooms=Room.all;
+        this.rooms = rooms;
 
+        rooms.$loaded().then(function(rooms) {
+            var key1 = '<KEY_FIRST_ROOM';
+            room = rooms.$getRecord(key1);
 
-        this.rooms=Room.all;
+            $scope.currentRoom = room;
+            if ($scope.currentRoom != null) {
+                $scope.messages = Message.getMessagesByRoomId($scope.currentRoom.$id);
+            }
+        });
 
-        var chatapp = this;
-        chatapp.title = "Chat Rooms";
-        chatapp.allRooms = Room.all;
-        chatapp.currentRoom = null;
-        chatapp.messages = null;
-        chatapp.hello = "Hello";
-
-        chatapp.selectRoom = function(room){
-            chatapp.currentRoom = room;
-            chatapp.messages = Message.getByRoomId(chatapp.currentRoom.$id);
-
+        this.selectRoom = function(room){
+            $scope.currentRoom = room;
+            if ($scope.currentRoom != null) {
+                $scope.messages = Message.getMessagesByRoomId($scope.currentRoom.$id);
+            }
         };
     }
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room','Message', HomeCtrl]);
+    .controller('HomeCtrl', ['Room','Message', '$scope',HomeCtrl]);
 })();
