@@ -1,8 +1,10 @@
+
 (function() {
-    function HomeCtrl(Room, Message) {
+    function HomeCtrl($scope,Room, Message) {
 
 
-        this.rooms=Room.all;
+        rooms=Room.all;
+        this.rooms = rooms;
 
         var chatapp = this;
         chatapp.title = "Chat Rooms";
@@ -13,12 +15,12 @@
 
         chatapp.selectRoom = function(room){
             chatapp.currentRoom = room;
-            chatapp.messages = Message.getByRoomId(chatapp.currentRoom.$id);
-
+            chatapp.messages = Message.getMessagesByRoomId(chatapp.currentRoom.$id);
         };
+
     }
 
-  angular
-    .module('blocChat')
-    .controller('HomeCtrl', ['Room','Message', HomeCtrl]);
+    angular
+        .module('blocChat')
+        .controller('HomeCtrl', ['$scope','Room', 'Message', HomeCtrl]);
 })();
