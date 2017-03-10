@@ -16,22 +16,18 @@
        </section>
 	 </div>
 
-</section>
-<section class="chat-selection">
-    <div class ="container">
-       <h2>{{ currentRoom.$value }}</h2>
-        <table>
-              <tr ng-repeat="message in homeCtrl.messages track by $index">
-                <th>User</th>
-                <th>Time Sent</th>
-                <th>Message</th>
-              </tr>
+   <table ng-repeat="message in homeCtrl.messages">
+         <tr>
+           <th>User</th>
+           <th>Time Sent</th>
+           <th>Message</th>
+         </tr>
 
-              <tr>
-                <td>{{ message.username }}</td>
-                <td>{{ message.sentAt }}</td>
-                <td>{{ message.content }}</td>
-              </tr>
-        </table>
-    </div>
+         <tr>
+           <td>{{ message.username }}</td>
+           <td>{{ message.sentAt }}</td>
+           <td>{{ message.content }}</td>
+         </tr>
+   </table>
+
 </section>
