@@ -12,6 +12,7 @@
         chatapp.currentRoom = null;
         chatapp.messages = null;
         chatapp.hello = "Hello";
+        
 
         chatapp.selectRoom = function(room){
             chatapp.currentRoom = room;
