@@ -5,11 +5,12 @@
       if (currentUser){
         console.log(currentUser);
     } else{
-        console.log("Set your Useranme");
+        console.log("No user set");
 
     }
 
-    if (!currentUser || currentUser === '') {
+    if (!currentUser || currentUser === "") {
+
       var modalInstance = $uibModal.open({
           templateUrl: '/templates/user-modal.html',
           controller: function($scope, $uibModalInstance){
@@ -21,7 +22,7 @@
                 }
               };
           },
-        
+
     size: 'md',
   });
     modalInstance.result.then(function(data){

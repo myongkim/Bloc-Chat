@@ -5,7 +5,7 @@
     var rooms = $firebaseArray(ref);
 
     var genRoom = function(){
-        return $firebaseArray(ref.orderBychild('name').equalTo('General'));
+        return $firebaseArray(ref.orderByChild('name').equalTo('General'));
 
     };
 
