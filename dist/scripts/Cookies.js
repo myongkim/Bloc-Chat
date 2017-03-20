@@ -2,13 +2,6 @@
   function BlocChatCookies($cookies, $uibModal) {
     var currentUser = $cookies.get('blocChatCurrentUser');
 
-      if (currentUser){
-        console.log(currentUser);
-    } else{
-        console.log("No user set");
-
-    }
-
     if (!currentUser || currentUser === "") {
 
       var modalInstance = $uibModal.open({

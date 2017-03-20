@@ -16,14 +16,14 @@
        </section>
 	 </div>
 </section>
-<section>
-   <div class="current-user" ng-controller="HomeCtrl">
+<section ng-controller="HomeCtrl as homeCtrl">
+   <div class="current-user">
      <P><strong>Current User:</strong></p>
      <p>{{rooms.currentUser}}</p>
      <button class="current-user-click" ng-click="rooms.newUser()">Set New User</button>
      <button class="reset-user-click" ng-click="rooms.resetuser()">Reset Username</button>
    </div>
-</section>
+
 
 <section class="chat-section">
    <table ng-repeat="message in homeCtrl.messages">
