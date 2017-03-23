@@ -11,7 +11,7 @@
         chatapp.allRooms = Room.all;
         chatapp.currentRoom = null;
         chatapp.hello = "Hello";
-        
+
 
         chatapp.selectRoom = function(room){
             chatapp.currentRoom = room;
@@ -26,7 +26,7 @@
         chatapp.currentUser = current();
 
         chatapp.newUser = function(){
-            var modalInstnce = $uibModal.open({
+            var modalInstance = $uibModal.open({
                 templateUrl:'/templates/user-modal.html',
                 controller: function($scope, $uibModalInstance){
                             $scope.create = function(){
