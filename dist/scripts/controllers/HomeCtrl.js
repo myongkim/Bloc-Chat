@@ -9,9 +9,11 @@
         var chatapp = this;
         chatapp.title = "Chat Rooms";
         chatapp.allRooms = Room.all;
-        chatapp.currentRoom = null;
-        chatapp.hello = "Hello";
-        
+        chatapp.currentRoom = {name:"General",
+                               $id:"-KeB1uDRBND67pZopoqb"
+                             };
+        chatapp.currentTime = null;
+
 
         chatapp.selectRoom = function(room){
             chatapp.currentRoom = room;
@@ -46,10 +48,29 @@
               });
             };
 
+              // reset the username to ""
             chatapp.resetUser = function(){
               chatapp.currentUser = null;
               $cookies.put('blocChatCurrentUser', "");
             };
+
+            chatapp.sendMessage = function(){
+              chatapp.currentTime= getTime();
+              //(newMessage, roomId, sent, user)
+              Message.send($scope.newMessage, chatapp.currentRoom.$id, chatapp.currentTime, chatapp.currentUser);
+              $scope.newMessage=null;
+            };
+
+            var getTime = function(){
+                var today = new Date();
+                var date = (today.getMonth()+1)+"/"+ today.getDate()+ "/" + today.getFullYear();
+                var time = today.getHours()+":"+ today.getMinutes()+":"+today.getSeconds();
+              };
+
+            chatapp.logger=function(message){
+              console.log(message);
+
+            }
 }
     angular
         .module('blocChat')

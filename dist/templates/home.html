@@ -15,29 +15,35 @@
          </table>
        </section>
 	 </div>
-</section>
-<section ng-controller="HomeCtrl as homeCtrl">
    <div class="current-user">
      <P><strong>Current User:</strong></p>
      <p>{{rooms.currentUser}}</p>
      <button class="current-user-click" ng-click="rooms.newUser()">Set New User</button>
      <button class="reset-user-click" ng-click="rooms.resetuser()">Reset Username</button>
    </div>
+ </section>
 
 
 <section class="chat-section">
-   <table ng-repeat="message in homeCtrl.messages">
+  <h1> {{ rooms.currentRoom.name }} </h1>
+
+   <table>
+
          <tr>
            <th>User</th>
            <th>Time Sent</th>
            <th>Message</th>
          </tr>
 
-         <tr>
+         <tr ng-repeat="message in homeCtrl.messages">
            <td>{{ message.username }}</td>
            <td>{{ message.sentAt }}</td>
            <td>{{ message.content }}</td>
          </tr>
    </table>
+   <form>
+        <input type="text" ng-model="newMessage" size="92" placeholder="Send message... ">
+        <button ng-click="rooms.sendMessage()">Send</button>
+   </form>
 
 </section>
