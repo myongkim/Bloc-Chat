@@ -1,5 +1,5 @@
 
-<section class="form-popup" ng-controller="ModalCtrl as modal">
+<section class="form-popup">
 	<div class="modal-header">
 		<h5 class="modal-title" id="modal-title">Create New Room</h3>
 	</div>
@@ -7,7 +7,7 @@
 
 			<form ng-submit="modal.createRoom()">
 					<div class="input-group animated fadeIn">
-							<input type="text" class="form-control finderBar" ng-model="modal.name" title="name" placeholder="Your room name here" autofocus>
+							<input type="text" class="form-control finderBar" ng-model="name" title="name" placeholder="Your room name here" autofocus>
 					</div>
 		 </form>
 

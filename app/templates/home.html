@@ -10,22 +10,25 @@
       <section class="room-list-container">
          <table class="room-list">
            <div class="room-list-rooms-individual" ng-repeat="room in homeCtrl.rooms track by $index">
-    					 <p><a ng-click="homeCtrl.selectRoom(room)">{{ room.$value }}</a></p>
+    					 <p><a ng-click="chatapp.selectRoom(room)">{{room.$value}}</a></p>
+
     			 </div>
          </table>
        </section>
 	 </div>
    <div class="current-user">
-     <P><strong>Current User:</strong></p>
-     <p>{{rooms.currentUser}}</p>
-     <button class="current-user-click" ng-click="rooms.newUser()">Set New User</button>
-     <button class="reset-user-click" ng-click="rooms.resetuser()">Reset Username</button>
+     <p><strong>Current User:</strong></p>
+
+     <p>{{chatapp.currentUser}}</p>
+     <button class="current-user-click" ng-click="chatapp.newUser()">Set New User</button>
+     <button class="reset-user-click" ng-click="chatapp.resetuser()">Reset Username</button>
    </div>
  </section>
 
 
 <section class="chat-section">
-  <h1> {{ rooms.currentRoom.name }} </h1>
+
+  <h1> {{ chatapp.currentRoom.roomname }}</h1>
 
    <table>
 
@@ -43,7 +46,7 @@
    </table>
    <form>
         <input type="text" ng-model="newMessage" size="92" placeholder="Send message... ">
-        <button ng-click="rooms.sendMessage()">Send</button>
+        <button ng-click="chatapp.sendMessage()">Send</button>
    </form>
 
 </section>

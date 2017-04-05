@@ -16,12 +16,12 @@
               };
           },
 
-    size: 'md',
-  });
-    modalInstance.result.then(function(data){
+        size: 'md',
+      });
+      modalInstance.result.then(function(data){
         $cookies.put('blockChatCurrentUser', data);
-  });
-}
+      });
+    }
 }
   angular
     .module('blocChat')

@@ -21,7 +21,7 @@
     return {
         all: messages,
         getMessagesByRoomId: getMessagesByRoomId,
-        send: sendMessage,
+        sendMessage: sendMessage,
     };
 
   }

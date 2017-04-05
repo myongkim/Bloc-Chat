@@ -8,7 +8,7 @@
               templateUrl: '/templates/modal.html',
               controller: 'ModalCtrl',
               controllerAs: 'modalCtrl',
-          
+
           });
 
           return $scope.modalInstance
@@ -16,7 +16,7 @@
 
         this.createRoom = function() {
 
-          this.room.create(this.name);
+          this.room.create($scope.name);
           // call Room.addRoom
 
         this.dismiss()
