@@ -48,6 +48,7 @@
                 },
                 size: 'md',
             });
+        
 
             modalInstance.result.then(function(data){
               chatapp.currentUser = data;
