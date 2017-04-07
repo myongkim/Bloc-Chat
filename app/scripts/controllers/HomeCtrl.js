@@ -48,7 +48,7 @@
                 },
                 size: 'md',
             });
-        
+
 
             modalInstance.result.then(function(data){
               chatapp.currentUser = data;
@@ -72,7 +72,7 @@
         chatapp.sendMessage = function(){
           chatapp.currentTime= getTime();
           //(newMessage, roomId, sent, user)
-          Message.send($scope.newMessage, chatapp.currentRoom.$id, chatapp.currentTime, chatapp.currentUser);
+          Message.sendMessage($scope.newMessage, chatapp.currentRoom.$id, chatapp.currentTime, chatapp.currentUser);
           $scope.newMessage=null;
         };
 

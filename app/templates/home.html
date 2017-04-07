@@ -1,12 +1,12 @@
 <section ng-controller="HomeCtrl as homeCtrl" class="room-list-container">
-  <div class="room-list-title" >
-    <div type="button" class="btn btn-default" ng-controller="ModalCtrl as modalCtrl" ng-click="modalCtrl.open()">Create New Room</button>
-  </div>
 
-  <br />
 
-	<div class="room-list-rooms">
-    <div class="room-open-title"><h2>Lets chat with each other</h2></div>
+    <div class="room-open-title"><h2>Bloc Chat</h2></div>
+    </br>
+    <div class="room-list-title" >
+      <div type="button" class="btn btn-default" ng-controller="ModalCtrl as modalCtrl" ng-click="modalCtrl.open()">Create New Room</button>
+    </div>
+
       <section class="room-list-container">
          <table class="room-list">
            <div class="room-list-rooms-individual" ng-repeat="room in homeCtrl.rooms track by $index">
@@ -14,16 +14,16 @@
 
     			 </div>
          </table>
+
        </section>
 	 </div>
-   <div class="current-user">
-     <p><strong>Current User:</strong></p>
-
-     <p>{{chatapp.currentUser}}</p>
-     <button class="current-user-click" ng-click="chatapp.newUser()">Set New User</button>
-     <button class="reset-user-click" ng-click="chatapp.resetuser()">Reset Username</button>
-   </div>
- </section>
+</section><br><br>
+<div class="current-user">
+  <p><strong>Current User Name:</strong></p>
+  <p>{{chatapp.currentUser}}</p>
+  <button class="current-user-click" ng-click="chatapp.newUser()">Set New User</button>
+  <button class="reset-user-click" ng-click="chatapp.resetuser()">Reset Username</button>
+</div>
 
 
 <section class="chat-section">
@@ -31,7 +31,7 @@
   <h1> {{ chatapp.currentRoom.roomname }}</h1>
 
    <table>
-
+<br>
          <tr>
            <th>User</th>
            <th>Time Sent</th>
@@ -45,7 +45,7 @@
          </tr>
    </table>
    <form>
-        <input type="text" ng-model="newMessage" size="92" placeholder="Send message... ">
+        <input class="sendMessage" type="text" ng-model="newMessage" size="92" placeholder="Send message... ">
         <button ng-click="chatapp.sendMessage()">Send</button>
    </form>
 

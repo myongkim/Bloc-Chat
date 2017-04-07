@@ -13,7 +13,7 @@
         sendRef.update({
             content: newMessage,
             roomId: roomId,
-            sentAt: sent,
+            sent: sent,
             username: user
         });
     }
