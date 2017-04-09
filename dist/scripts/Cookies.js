@@ -23,6 +23,7 @@
       });
     }
 }
+
   angular
     .module('blocChat')
     .run(['$cookies', '$uibModal', BlocChatCookies]);

@@ -13,12 +13,13 @@
         chatapp.title = "Chat Rooms";
 
         chatapp.allRooms = Room.all;
-        console.log(chatapp.allRooms);
         chatapp.currentRoom = {name:"General",
                                $id:"-KgMdeMPDoodPX5UwBkW",
                                roomname:"Room1"
                              };
         chatapp.currentTime = null;
+        chatapp.newMessage = null;
+
 
 
 
@@ -72,10 +73,9 @@
         chatapp.sendMessage = function(){
           chatapp.currentTime= getTime();
           //(newMessage, roomId, sent, user)
-          Message.sendMessage($scope.newMessage, chatapp.currentRoom.$id, chatapp.currentTime, chatapp.currentUser);
+          Message.sendMessage(chatapp.newMessage, chatapp.currentRoom.$id, chatapp.currentTime, chatapp.currentUser);
           $scope.newMessage=null;
         };
-
 
         chatapp.logger=function(message){
           console.log(message);
